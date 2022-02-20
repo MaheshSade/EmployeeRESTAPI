@@ -35,21 +35,8 @@ public class MainprojectApplicationTests {
         when(repo.findAll()).thenReturn(Stream.of(new Employee(1,"slkndvl",5346,111)).collect(Collectors.toList()));
         assertEquals(1,con.getAllEmployees().size());
     }
-    @Test
-    public void getEmployeeTest() {
-        int id = 1;
-        Employee e =new Employee(1,"mahesh",53464,111);
-        when(repo.findById(id)).thenReturn(Optional.of(e));
-        assertEquals(e,con.getEmployee(id));
-    }
-    @Test
-    public void getEmployeeNameTest() {
-        int id =2;
-        Employee e =new Employee(2,"mahesh",53464,111);
-        when(repo.getById(id)).thenReturn(e);
-        assertEquals(false,con.getEmployeeName(e.getId()).isEmpty());
-
-    }
+    
+    
     @Test
     public void addEmployeeTest(){
         Employee e =new Employee(1,"mahesh",53464,111);
